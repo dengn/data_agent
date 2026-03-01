@@ -1,9 +1,9 @@
 {
   "rewrites": [
-    { "source": "/api/:path*", "destination": "/api/:path*" },
+    {
+      "source": "/api/:path*",
+      "destination": "https://data-agent-api.onrender.com/api/:path*"
+    },
     { "source": "/(.*)", "destination": "/" }
-  ],
-  "env": {
-    "VITE_API_BASE": "@vite_api_base"
-  }
+  ]
 }

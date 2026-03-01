@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: data-agent-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MO_HOST
+        sync: false
+      - key: MO_PORT
+        sync: false
+      - key: MO_USER
+        sync: false
+      - key: MO_PASSWORD
+        sync: false
+      - key: MO_DATABASE
+        sync: false
+      - key: MOI_BASE_URL
+        sync: false
+      - key: MOI_API_KEY
+        sync: false
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://api.deepseek.com
+      - key: LLM_MODEL
+        value: deepseek-chat
