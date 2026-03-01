@@ -22,8 +22,10 @@ class Settings:
     moi_base_url: str = field(default_factory=lambda: os.getenv("MOI_BASE_URL", ""))
     moi_api_key: str = field(default_factory=lambda: os.getenv("MOI_API_KEY", ""))
 
-    # Claude
-    anthropic_api_key: str = field(default_factory=lambda: os.getenv("ANTHROPIC_API_KEY", ""))
+    # LLM (DeepSeek, OpenAI-compatible)
+    llm_api_key: str = field(default_factory=lambda: os.getenv("LLM_API_KEY", ""))
+    llm_base_url: str = field(default_factory=lambda: os.getenv("LLM_BASE_URL", "https://api.deepseek.com"))
+    llm_model: str = field(default_factory=lambda: os.getenv("LLM_MODEL", "deepseek-chat"))
 
     # App
     log_level: str = field(default_factory=lambda: os.getenv("LOG_LEVEL", "INFO"))
