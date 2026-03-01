@@ -3,6 +3,7 @@
 import logging
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from data_agent.api.chat import router as chat_router
 from data_agent.api.datasource import router as datasource_router
@@ -19,6 +20,13 @@ app = FastAPI(
     title="Data Agent",
     description="Intelligent data query agent supporting structured and unstructured data",
     version="0.1.0",
+)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 app.include_router(chat_router)
